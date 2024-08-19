@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOBAL JOB FINDER - Jobs</title>
+<style>
+body {
+margin: 0;
+font-family: 'Arial', sans-serif;
+background: #f4f4f4;
+color: #333;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+header {
+background-color: #4a90e2;
+color: #fff;
+padding: 20px 0;
+text-align: center;
+font-size: 24px;
+}
+nav {
+display: flex;
+justify-content: center;
+background-color: #333;
+padding: 10px 0;
+}
+nav a {
+color: #fff;
+text-decoration: none;
+margin: 0 15px;
+font-size: 18px;
+}
+nav a:hover {
+text-decoration: underline;
+}
+.container {
+width: 80%;
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+flex: 1;
+}
+.search-bar {
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+.search-bar input[type="text"] {
+width: 70%;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px 0 0 5px;
+}
+.search-bar button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #4a90e2;
+color: #fff;
+border-radius: 0 5px 5px 0;
+cursor: pointer;
+}
+.search-bar button:hover {
+background-color: #357ab8;
+}
+.job-listings {
+margin-top: 20px;
+}
+.job-listing {
+border-bottom: 1px solid #ccc;
+padding: 10px 0;
+}
+.job-listing h3 {
+margin: 0;
+font-size: 20px;
+}
+.job-listing p {
+margin: 5px 0;
+}
+.job-listing button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #4a90e2;
+color: #fff;
+border-radius: 5px;
+cursor: pointer;
+}
+.job-listing button:hover {
+background-color: #357ab8;
+}
+.find-more-jobs {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+.find-more-jobs button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #4a90e2;
+color: #fff;
+border-radius: 5px;
+cursor: pointer;
+}
+.find-more-jobs button:hover {
+background-color: #357ab8;
+}
+.contact-form {
+display: flex;
+flex-direction: column;
+}
+.contact-form input, .contact-form textarea {
+padding: 10px;
+margin: 10px 0;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.contact-form button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #4a90e2;
+color: #fff;
+border-radius: 5px;
+cursor: pointer;
+}
+.contact-form button:hover {
+background-color: #357ab8;
+}
+.footer {
+width: 100%;
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 10px 0;
+margin-top: auto;
+}
+.footer a {
+color: #4a90e2;
+text-decoration: none;
+margin: 0 10px;
+}
+.footer a:hover {
+text-decoration: underline;
+}
+.about-us-box {
+border: 2px solid #000;
+padding: 20px;
+margin: 20px;
+background: linear-gradient(145deg, #e0e0e0, #c0c0c0); /* Light to dark gradient for 3D effect */
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* 3D effect */
+text-align: center; /* Center the text */
+color: #333; /* Darker text color for contrast */
+transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.about-us-box:hover {
+transform: scale(1.05); /* Slightly enlarge on hover */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced 3D effect on hover */
+}
+/* Auth Buttons */
+.auth-buttons {
+position: fixed;
+top: 10px;
+left: 10px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.auth-buttons button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+width: 150px;
+}
+
+#signInBtn {
+background-color: #007bff;
+color: white;
+}
+
+#signInBtn:hover {
+background-color: #0056b3;
+}
+
+#signUpBtn {
+background-color: #28a745;
+color: white;
+}
+
+#signUpBtn:hover {
+background-color: #218838;
+}
+
+/* Modal Styles */
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgb(0,0,0);
+background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+max-width: 400px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* Form Styles */
+form {
+display: flex;
+flex-direction: column;
+}
+
+form label {
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+form input {
+margin-bottom: 15px;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+form button {
+padding: 10px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+background-color: #007bff;
+color: white;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+form button:hover {
+background-color: #0056b3;
+}
+.job-listing {
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+}
+
+.job-details {
+flex: 1;
+}
+
+.job-image {
+width: 100px;
+height: 100px;
+object-fit: cover;
+position: absolute;
+right: 10px;
+}
+
+.country-flag {
+width: 30px;
+height: 20px;
+margin-left: 10px;
+}
+.header-content {
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+padding: 0 20px;
+}
+
+.menu-container {
+position: absolute;
+right: 20px;
+}
+
+.menu-button {
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+}
+
+.dropdown-menu {
+display: none;
+position: absolute;
+top: 30px;
+right: 0;
+background-color: white;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+overflow: hidden;
+z-index: 1000;
+}
+
+.dropdown-menu button {
+display: block;
+width: 100%;
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #007bff;
+color: white;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.dropdown-menu button:hover {
+background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+.header-content {
+flex-direction: column;
+}
+
+.menu-container {
+position: static;
+margin-top: 10px;
+}
+
+.dropdown-menu {
+position: static;
+box-shadow: none;
+}
+}
+.dropdown-menu button {
+display: block;
+width: 100%;
+padding: 12px 25px;
+font-size: 16px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+background-color: #007bff;
+color: white;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-menu button:hover {
+background-color: #0056b3;
+box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+transform: translateY(-2px);
+}
+
+#signUpBtn {
+background-color: #28a745;
+}
+
+#signUpBtn:hover {
+background-color: #218838;
+}
+
+</style>
+
+<body>
+<header>
+<div class="header-content">
+<span>GLOBAL JOB FINDER</span>
+<div class="menu-container">
+<button class="menu-button" onclick="toggleMenu()">☰</button>
+<div class="dropdown-menu" id="dropdownMenu">
+<button onclick="window.location.href='signup.html'">Sign Up</button>
+<button onclick="window.location.href='login.html'">Login</button>
+</div>
+</div>
+</div>
+</header>
+<nav>
+<a href="index.html#home">Home</a>
+<a href="#" id="jobButton">Jobs</a>
+<a href="index.html#contact">Contact Us</a>
+<a href="index.html#about-us">About Us</a>
+</nav>
+<div id="home" class="container">
+<div class="search-bar">
+<input type="text" placeholder="Search for jobs...">
+<button>Search</button>
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Software Engineer</h3>
+<p>Company: Google</p>
+<p>Location: Mountain View, CA, United States</p>
+<img src="https://flagcdn.com/us.svg" alt="US Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="uk8.jpg" alt="Software Engineer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Product Manager</h3>
+<p>Company: Facebook</p>
+<p>Location: London, United Kingdom</p>
+<img src="https://flagcdn.com/gb.svg" alt="UK Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="facebook.jpg" alt="Product Manager Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Data Scientist</h3>
+<p>Company: Amazon</p>
+<p>Location: Toronto, Canada</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="amazon.jpg" alt="Data Scientist Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>UX Designer</h3>
+<p>Company: Apple</p>
+<p>Location: Sydney, Australia</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="apple.jpg" alt="UX Designer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Marketing Specialist</h3>
+<p>Company: Sony</p>
+<p>Location: Tokyo, Japan</p>
+<img src="https://flagcdn.com/jp.svg" alt="Japan Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="sony.jpg" alt="Marketing Specialist Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Sales Manager</h3>
+<p>Company: Zara</p>
+<p>Location: Madrid, Spain</p>
+<img src="https://flagcdn.com/es.svg" alt="Spain Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="zara.jpg" alt="Sales Manager Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Project Manager</h3>
+<p>Company: IKEA</p>
+<p>Location: Stockholm, Sweden</p>
+<img src="https://flagcdn.com/se.svg" alt="Sweden Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="ikea.jpg" alt="Project Manager Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Financial Analyst</h3>
+<p>Company: UBS</p>
+<p>Location: Zurich, Switzerland</p>
+<img src="https://flagcdn.com/ch.svg" alt="Switzerland Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="ubs.jpg" alt="Financial Analyst Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Mechanical Engineer</h3>
+<p>Company: BMW</p>
+<p>Location: Munich, Germany</p>
+<img src="https://flagcdn.com/de.svg" alt="Germany Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="bmw.jpg" alt="Mechanical Engineer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Graphic Designer</h3>
+<p>Company: L'Oréal</p>
+<p>Location: Paris, France</p>
+<img src="https://flagcdn.com/fr.svg" alt="France Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="loreal.jpg" alt="Graphic Designer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Software Developer</h3>
+<p>Company: Telenor</p>
+<p>Location: Oslo, Norway</p>
+<img src="https://flagcdn.com/no.svg" alt="Norway Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="telenor.jpg" alt="Software Developer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Data Analyst</h3>
+<p>Company: Maersk</p>
+<p>Location: Copenhagen, Denmark</p>
+<img src="https://flagcdn.com/dk.svg" alt="Denmark Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="maersk.jpg" alt="Data Analyst Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>HR Manager</h3>
+<p>Company: Philips</p>
+<p>Location: Amsterdam, Netherlands</p>
+<img src="https://flagcdn.com/nl.svg" alt="Netherlands Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="philips.jpg" alt="HR Manager Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Architect</h3>
+<p>Company: Ferrari</p>
+<p>Location: Rome, Italy</p>
+<img src="https://flagcdn.com/it.svg" alt="Italy Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="ferrari.jpg" alt="Architect Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Marketing Manager</h3>
+<p>Company: EDP</p>
+<p>Location: Lisbon, Portugal</p>
+<img src="https://flagcdn.com/pt.svg" alt="Portugal Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="edp.jpg" alt="Marketing Manager Image" class="job-image">
+</div>
+
+<!-- Add more job listings here -->
+</div>
+
+<div class="find-more-jobs">
+<button id="findMoreJobsButton">Find More Jobs</button>
+</div>
+</div>
+<div id="about-us" class="about-us-box">
+<h2>About Global Job Finder</h2>
+<p>Welcome to Global Job Finder, your ultimate destination for discovering career opportunities that align with your aspirations and skills. 
+Our platform is designed to bridge the gap between job seekers and employers, creating a seamless and efficient job search experience. Whether 
+you're a recent graduate, a seasoned professional, or someone looking to make a career change, Global Job Finder is here to support you every 
+step of the way. At Global Job Finder, our mission is to empower individuals by connecting them with the right job opportunities. We believe that
+ everyone deserves a fulfilling career that not only meets their financial needs but also aligns with their passions and goals. Our platform is 
+ built on the principles of accessibility, inclusivity, and innovation, ensuring that every user has the tools and resources they need to succeed.
+ You will choose us because here you will get; Extensive Job Listings, User-Friendly Interface, Personalized Job Recommendations, Career Resources 
+ and Support, Global Reach and more. </p>
+</div>
+<div id="contact" class="container">
+<h2>Contact Us</h2>
+<form class="contact-form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message" required></textarea>
+<button type="submit">Send</button>
+</form>
+</div>
+<div class="footer">
+© 2024 GLOBAL JOB FINDER |<a href="privacy.html" target="_blank">Privacy Policy</a> | <a href="terms.html" target="_blank">Terms of Service</a>
+</div>
+<script>
+function showPosition(position) {
+const latitude = position.coords.latitude;
+const longitude = position.coords.longitude;
+const userLocation = `Your Location: Latitude ${latitude}, Longitude ${longitude}`;
+document.getElementById('user-location-1').innerText = userLocation;
+document.getElementById('user-location-2').innerText = userLocation;
+document.getElementById('user-location-3').innerText = userLocation;
+document.getElementById('user-location-4').innerText = userLocation;
+document.getElementById('user-location-5').innerText = userLocation;
+localStorage.setItem('locationAllowed', 'true');
+localStorage.setItem('userLocation', userLocation);
+}
+
+function handleLocationError() {
+localStorage.setItem('locationAllowed', 'false');
+}
+
+function getLocation() {
+if (localStorage.getItem('locationAsked') === null) {
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(showPosition, handleLocationError);
+localStorage.setItem('locationAsked', 'true');
+} else {
+alert("Geolocation is not supported by this browser.");
+}
+} else if (localStorage.getItem('locationAllowed') === 'true') {
+const userLocation = localStorage.getItem('userLocation');
+document.getElementById('user-location-1').innerText = userLocation;
+document.getElementById('user-location-2').innerText = userLocation;
+document.getElementById('user-location-3').innerText = userLocation;
+document.getElementById('user-location-4').innerText = userLocation;
+document.getElementById('user-location-5').innerText = userLocation;
+} else {
+const userLocation = "Location access previously denied.";
+document.getElementById('user-location-1').innerText = userLocation;
+document.getElementById('user-location-2').innerText = userLocation;
+document.getElementById('user-location-3').innerText = userLocation;
+document.getElementById('user-location-4').innerText = userLocation;
+document.getElementById('user-location-5').innerText = userLocation;
+}
+}
+
+window.onload = getLocation;
+
+function handleJobButtonClick(event) {
+event.preventDefault();
+fetch('https://ipapi.co/json/')
+.then(response => response.json())
+.then(data => {
+const country = data.country_name;
+if (country === 'Bangladesh') {
+window.location.href = 'bangladesh_jobs.html';
+} else if (country === 'United States') {
+window.location.href = 'usa_jobs.html';
+} else if (country === 'Canada') {
+window.location.href = 'canada_jobs.html';
+} else if (country === 'United Kingdom') {
+window.location.href = 'uk_jobs.html';
+} else if (country === 'Australia') {
+window.location.href = 'australia_jobs.html';
+} else if (country === 'Germany') {
+window.location.href = 'germany_jobs.html';
+} else if (country === 'France') {
+window.location.href = 'france_jobs.html';
+} else if (country === 'Netherlands') {
+window.location.href = 'netherlands_jobs.html';
+} else if (country === 'Sweden') {
+window.location.href = 'sweden_jobs.html';
+} else if (country === 'Switzerland') {
+window.location.href = 'switzerland_jobs.html';
+} else if (country === 'Norway') {
+window.location.href = 'norway_jobs.html';
+} else if (country === 'Denmark') {
+window.location.href = 'denmark_jobs.html';
+} else if (country === 'Finland') {
+window.location.href = 'finland_jobs.html';
+} else if (country === 'Japan') {
+window.location.href = 'japan_jobs.html';
+} else if (country === 'South Korea') {
+window.location.href = 'southkorea_jobs.html';
+} else if (country === 'Singapore') {
+window.location.href = 'singapore_jobs.html';
+} else if (country === 'United Arab Emirates') {
+window.location.href = 'uae_jobs.html';
+} else if (country === 'Saudi Arabia') {
+window.location.href = 'saudiarabia_jobs.html';
+} else if (country === 'Israel') {
+window.location.href = 'israel_jobs.html';
+} else if (country === 'New Zealand') {
+window.location.href = 'newzealand_jobs.html';
+} else if (country === 'Ireland') {
+window.location.href = 'ireland_jobs.html';
+} else if (country === 'Belgium') {
+window.location.href = 'belgium_jobs.html';
+} else if (country === 'Austria') {
+window.location.href = 'austria_jobs.html';
+} else if (country === 'Italy') {
+window.location.href = 'italy_jobs.html';
+} else if (country === 'Spain') {
+window.location.href = 'spain_jobs.html';
+} else if (country === 'Portugal') {
+window.location.href = 'portugal_jobs.html';
+} else if (country === 'Hong Kong') {
+window.location.href = 'hongkong_jobs.html';
+} else if (country === 'Taiwan') {
+window.location.href = 'taiwan_jobs.html';
+} else if (country === 'Brazil') {
+window.location.href = 'brazil_jobs.html';
+} else if (country === 'Mexico') {
+window.location.href = 'mexico_jobs.html';
+} else if (country === 'South Africa') {
+window.location.href = 'southafrica_jobs.html';
+} else {
+window.location.href = 'jobs.html'; // Default page
+}
+})
+.catch(error => {
+console.error('Error fetching location:', error);
+window.location.href = 'jobs.html'; // Default page in case of error
+});
+}
+function toggleMenu() {
+const menu = document.getElementById('dropdownMenu');
+menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+window.onclick = function(event) {
+if (!event.target.matches('.menu-button')) {
+const dropdowns = document.getElementsByClassName('dropdown-menu');
+for (let i = 0; i < dropdowns.length; i++) {
+const openDropdown = dropdowns[i];
+if (openDropdown.style.display === 'block') {
+openDropdown.style.display = 'none';
+}
+}
+}
+}
+
+document.getElementById('jobButton').addEventListener('click', handleJobButtonClick);
+document.getElementById('findMoreJobsButton').addEventListener('click', handleJobButtonClick);
+</script>

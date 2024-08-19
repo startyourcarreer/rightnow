@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOBAL JOB FINDER - Jobs in Australia</title>
+<style>
+body {
+margin: 0;
+font-family: 'Arial', sans-serif;
+background: #f4f4f4;
+color: #333;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+header {
+background-color: #4a90e2;
+color: #fff;
+padding: 20px 0;
+text-align: center;
+font-size: 24px;
+}
+nav {
+display: flex;
+justify-content: center;
+background-color: #333;
+padding: 10px 0;
+}
+nav a {
+color: #fff;
+text-decoration: none;
+margin: 0 15px;
+font-size: 18px;
+}
+nav a:hover {
+text-decoration: underline;
+}
+.container {
+width: 80%;
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+flex: 1;
+}
+.search-bar {
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+.search-bar input[type="text"] {
+width: 70%;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px 0 0 5px;
+}
+.search-bar button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #4a90e2;
+color: #fff;
+border-radius: 0 5px 5px 0;
+cursor: pointer;
+}
+.search-bar button:hover {
+background-color: #357ab8;
+}
+.job-listings {
+margin-top: 20px;
+}
+.job-listing {
+border-bottom: 1px solid #ccc;
+padding: 10px 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+}
+.job-listing h3 {
+margin: 0;
+font-size: 20px;
+}
+.job-listing p {
+margin: 5px 0;
+}
+.job-listing button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #4a90e2;
+color: #fff;
+border-radius: 5px;
+cursor: pointer;
+}
+.job-listing button:hover {
+background-color: #357ab8;
+}
+.job-image {
+width: 100px;
+height: 100px;
+object-fit: cover;
+position: absolute;
+right: 10px;
+}
+.country-flag {
+width: 30px;
+height: 20px;
+margin-left: 10px;
+}
+.footer {
+width: 100%;
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 10px 0;
+margin-top: auto;
+}
+.footer a {
+color: #4a90e2;
+text-decoration: none;
+margin: 0 10px;
+}
+.footer a:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<header>
+GLOBAL JOB FINDER - Jobs in Australia
+</header>
+<nav>
+<a href="index.html#home">Home</a>
+<a href="jobs.html"></a>
+<a href="index.html#contact">Contact Us</a>
+</nav>
+<div class="container">
+<div class="search-bar">
+<input type="text" placeholder="Search for jobs...">
+<button>Search</button>
+</div>
+<h2>Job Listings</h2>
+<div class="job-listings">
+<div class="job-listing">
+<div class="job-details">
+<h3>Software Engineer</h3>
+<p>Company: Google</p>
+<p>Location: Sydney, NSW</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="uk8.jpg" alt="Software Engineer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Product Manager</h3>
+<p>Company: Facebook</p>
+<p>Location: Melbourne, VIC</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="facebook.jpg" alt="Product Manager Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Data Scientist</h3>
+<p>Company: Amazon</p>
+<p>Location: Brisbane, QLD</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="amazon.jpg" alt="Data Scientist Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>UX Designer</h3>
+<p>Company: Apple</p>
+<p>Location: Perth, WA</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="apple.jpg" alt="UX Designer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Chief Financial Officer (CFO)</h3>
+<p>Company: BHP</p>
+<p>Location: Melbourne, VIC</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="bhp.jpg" alt="CFO Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Surgeon</h3>
+<p>Company: Royal Melbourne Hospital</p>
+<p>Location: Melbourne, VIC</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="royalm.jpg" alt="Surgeon Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Corporate Lawyer</h3>
+<p>Company: Allens</p>
+<p>Location: Sydney, NSW</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="allens.jpg" alt="Corporate Lawyer Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>IT Director</h3>
+<p>Company: Atlassian</p>
+<p>Location: Sydney, NSW</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="atlassian.jpg" alt="IT Director Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Software Engineer</h3>
+<p>Company: Google</p>
+<p>Location: Sydney, NSW</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="uk8.jpg" alt="Software Engineer Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<!-- Additional job listings -->
+<div class="job-listing">
+<div class="job-details">
+<h3>Chief Financial Officer (CFO)</h3>
+<p>Company: BHP</p>
+<p>Location: Melbourne, VIC</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="bhp.jpg" alt="CFO Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Surgeon</h3>
+<p>Company: Royal Melbourne Hospital</p>
+<p>Location: Melbourne, VIC</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="royalm.jpg" alt="Surgeon Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Corporate Lawyer</h3>
+<p>Company: Allens</p>
+<p>Location: Sydney, NSW</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="allens.jpg" alt="Corporate Lawyer Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>IT Director</h3>
+<p>Company: Atlassian</p>
+<p>Location: Sydney, NSW</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="atlassian.jpg" alt="IT Director Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Data Engineer</h3>
+<p>Company: Atlassian</p>
+<p>Location: Sydney, NSW</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="atlassian.jpg" alt="Data Engineer Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Cybersecurity Analyst</h3>
+<p>Company: Commonwealth Bank</p>
+<p>Location: Melbourne, VIC</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="commonwealth.jpg" alt="Cybersecurity Analyst Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>AI Research Scientist</h3>
+<p>Company: CSIRO</p>
+<p>Location: Canberra, ACT</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="csiro.jpg" alt="AI Research Scientist Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Blockchain Developer</h3>
+<p>Company: IBM</p>
+<p>Location: Sydney, NSW</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="ibm.jpg" alt="Blockchain Developer Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Cloud Solutions Architect</h3>
+<p>Company: Microsoft</p>
+<p>Location: Brisbane, QLD</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="uk9.jpg" alt="Cloud Solutions Architect Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Robotics Engineer</h3>
+<p>Company: Tesla</p>
+<p>Location: Melbourne, VIC</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="tesla.jpg" alt="Robotics Engineer Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Environmental Scientist</h3>
+<p>Company: Rio Tinto</p>
+<p>Location: Perth, WA</p>
+<img src="https://flagcdn.com/au.svg" alt="Australia Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="rio.jpg" alt="Environmental Scientist Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+
+
+<!-- Add more job listings as needed -->
+</div>
+</div>
+<footer class="footer">
+© 2024 GLOBAL JOB FINDER | <a href="privacy.html" target="_blank">Privacy Policy</a> | <a href="terms.html" target="_blank">Terms of Service</a>
+</footer>
+</body>
+</html>

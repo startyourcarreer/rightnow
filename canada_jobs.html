@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOBAL JOB FINDER - Jobs in Canada</title>
+<style>
+body {
+margin: 0;
+font-family: 'Arial', sans-serif;
+background: #f4f4f4;
+color: #333;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+header {
+background-color: #4a90e2;
+color: #fff;
+padding: 20px 0;
+text-align: center;
+font-size: 24px;
+}
+nav {
+display: flex;
+justify-content: center;
+background-color: #333;
+padding: 10px 0;
+}
+nav a {
+color: #fff;
+text-decoration: none;
+margin: 0 15px;
+font-size: 18px;
+}
+nav a:hover {
+text-decoration: underline;
+}
+.container {
+width: 80%;
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+flex: 1;
+}
+.search-bar {
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+.search-bar input[type="text"] {
+width: 70%;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px 0 0 5px;
+}
+.search-bar button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #4a90e2;
+color: #fff;
+border-radius: 0 5px 5px 0;
+cursor: pointer;
+}
+.search-bar button:hover {
+background-color: #357ab8;
+}
+.job-listings {
+margin-top: 20px;
+}
+.job-listing {
+border-bottom: 1px solid #ccc;
+padding: 10px 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+}
+.job-listing h3 {
+margin: 0;
+font-size: 20px;
+}
+.job-listing p {
+margin: 5px 0;
+}
+.job-listing button {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #4a90e2;
+color: #fff;
+border-radius: 5px;
+cursor: pointer;
+}
+.job-listing button:hover {
+background-color: #357ab8;
+}
+.job-image {
+width: 100px;
+height: 100px;
+object-fit: cover;
+position: absolute;
+right: 10px;
+}
+.country-flag {
+width: 30px;
+height: 20px;
+margin-left: 10px;
+}
+.footer {
+width: 100%;
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 10px 0;
+margin-top: auto;
+}
+.footer a {
+color: #4a90e2;
+text-decoration: none;
+margin: 0 10px;
+}
+.footer a:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<header>
+GLOBAL JOB FINDER - Jobs in Canada
+</header>
+<nav>
+<a href="index.html#home">Home</a>
+<a href="jobs.html"></a>
+<a href="index.html#contact">Contact Us</a>
+</nav>
+<div class="container">
+<div class="search-bar">
+<input type="text" placeholder="Search for jobs...">
+<button>Search</button>
+</div>
+<h2>Job Listings</h2>
+<div class="job-listings">
+<div class="job-listing">
+<div class="job-details">
+<h3>Cardiologist</h3>
+<p>Company: Toronto General Hospital</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="toronto.jpg" alt="Cardiologist Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Software Engineer</h3>
+<p>Company: Shopify</p>
+<p>Location: Ottawa, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="shopify.jpg" alt="Software Engineer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Data Scientist</h3>
+<p>Company: RBC</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="rbc.jpg" alt="Data Scientist Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>UX Designer</h3>
+<p>Company: Google</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="uk8.jpg" alt="UX Designer Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Marketing Specialist</h3>
+<p>Company: Bell Canada</p>
+<p>Location: Montreal, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="bell.jpg" alt="Marketing Specialist Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Sales Manager</h3>
+<p>Company: Telus</p>
+<p>Location: Vancouver, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="telus.jpg" alt="Sales Manager Image" class="job-image">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Project Manager</h3>
+<p>Company: Bombardier</p>
+<p>Location: Montreal, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="bombardier.jpg" alt="Project Manager Image" class="job-image">
+</div>
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Orthodontist</h3>
+<p>Company: Smile Dental Clinic</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="smile.jpg" alt="Orthodontist Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Forensic Pathologist</h3>
+<p>Company: Ontario Forensic Pathology Service</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="ontario.jpg" alt="Forensic Pathologist Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Ophthalmologist</h3>
+<p>Company: Vision Eye Clinic</p>
+<p>Location: Vancouver, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="vision.jpg" alt="Ophthalmologist Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Psychiatrist</h3>
+<p>Company: Centre for Addiction and Mental Health</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="centre.jpg" alt="Psychiatrist Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Neurosurgeon</h3>
+<p>Company: Vancouver General Hospital</p>
+<p>Location: Vancouver, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="vancouver.jpg" alt="Neurosurgeon Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Anesthesiologist</h3>
+<p>Company: Sunnybrook Health Sciences Centre</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="sunnybrook.jpg" alt="Anesthesiologist Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Chief Marketing Officer (CMO)</h3>
+<p>Company: Shopify</p>
+<p>Location: Ottawa, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="shopify.jpg" alt="CMO Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Chief Information Officer (CIO)</h3>
+<p>Company: RBC</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="rbc.jpg" alt="CIO Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Chief Executive Officer (CEO)</h3>
+<p>Company: Bell Canada</p>
+<p>Location: Montreal, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="bell.jpg" alt="CEO Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Chief Operating Officer (COO)</h3>
+<p>Company: Telus</p>
+<p>Location: Vancouver, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="telus.jpg" alt="COO Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Chief Financial Officer (CFO)</h3>
+<p>Company: Scotiabank</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="scotiabank.jpg" alt="CFO Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Risk Manager</h3>
+<p>Company: TD Bank</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="td.jpg" alt="Risk Manager Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Data Scientist</h3>
+<p>Company: Shopify</p>
+<p>Location: Ottawa, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="shopify.jpg" alt="Data Scientist Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+<div class="job-listing">
+<div class="job-details">
+<h3>Investment Manager</h3>
+<p>Company: Manulife</p>
+<p>Location: Toronto, CA</p>
+<img src="https://flagcdn.com/ca.svg" alt="Canada Flag" class="country-flag">
+<button onclick="window.location.href='apply.html'">Apply Now</button>
+</div>
+<img src="manulife.jpg" alt="Investment Manager Image" class="job-image" style="width: 100px; height: 100px;">
+</div>
+</div>
+<footer class="footer">
+© 2024 GLOBAL JOB FINDER | <a href="privacy.html" target="_blank">Privacy Policy</a> | <a href="terms.html" target="_blank">Terms of Service</a>
+</footer>
+</body>
+</html>
